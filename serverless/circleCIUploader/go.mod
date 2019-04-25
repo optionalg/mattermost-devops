@@ -1,4 +1,4 @@
-module github.com/mattermost/mattermost-serveless
+module github.com/mattermost/mattermost-devops/serverless/circleCIUploader
 
 go 1.12
 

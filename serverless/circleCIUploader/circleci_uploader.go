@@ -173,6 +173,9 @@ func uploadFile(awsSession *session.Session, filename string, bucket string) err
 		Bucket: aws.String(bucket),
 		Key:    aws.String(filename),
 		Body:   reader,
+		CacheControl: aws.String("no-cache"),
+		ContentType: aws.String("application/x-gzip"),
+		ACL: aws.String("public-read"),
 	}
 	_, err = s3Uploader.Upload(uploadInput)
 	if err != nil {

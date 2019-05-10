@@ -55,7 +55,7 @@ func handleRequest(req events.APIGatewayProxyRequest) (events.APIGatewayProxyRes
 			onBoardUser(event.UserID)
 		// DEACTIVED_USER or SUSPENDED_USER or USER_UNLICENSED
 		case 15, 21, 223:
-			fmt.Println("Create user event. Will start the offboading")
+			fmt.Println("Deactivation user event. Will start the offboading")
 			offBoardUser(event.UserID)
 		default:
 			fmt.Printf("Event not needed %v\n", event.EventTypeID)
